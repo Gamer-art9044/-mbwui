@@ -95,7 +95,7 @@ public class Main{
                     try {
                         runnable.run();
                     } catch (Exception e) {
-                        net.showError(e);
+                        showError(e);
                     }
                 //});
             }
