@@ -17,7 +17,8 @@ public class BNet extends Net {
     public void showError(Throwable e){
         if(e.getMessage() != null){
             String msg = e.getMessage().toLowerCase();
-            if(bannedErrs.find(banned -> msg.contains(banned.toLowerCase())) == null && false){
+            // if(bannedErrs.find(banned -> msg.contains(banned.toLowerCase())) == null){
+            if(false){
                 Log.err(e); // TODO.
             }
         }
