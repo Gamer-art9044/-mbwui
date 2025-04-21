@@ -31,7 +31,9 @@ import java.io.*;
 import java.util.*;
 import java.util.zip.*;
 
-import static mindustry.Vars.*;
+import mindustry.net.NetClient;
+
+import static Vars.*;
 
 public class BNetClient extends NetClient{
     private static final long entitySnapshotTimeout = 1000 * 20;
@@ -66,7 +68,7 @@ public class BNetClient extends NetClient{
     /** Packet handlers for custom types of messages, in binary. */
     private ObjectMap<String, Seq<Cons<byte[]>>> customBinaryPacketHandlers = new ObjectMap<>();
 
-    public NetClient(){
+    public BNetClient(){
 
         net.handleClient(Connect.class, packet -> {
             Log.info("Connecting to server: @", packet.addressTCP);
