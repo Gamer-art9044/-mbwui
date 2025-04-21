@@ -62,7 +62,7 @@ public class Main{
         Vars.content.createBaseContent();  // Загрузка базового контента
         Vars.world = new World(); // Инициализация игрового мира
         net = net2;
-        Vars.netClient = new NetClient();
+        Vars.netClient = new BNetClient();
         logic = new Logic();
         Groups.init();
 
