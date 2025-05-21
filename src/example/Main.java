@@ -30,6 +30,7 @@ import mindustry.net.Packets.WorldStream;
 import java.util.Locale;
 import java.util.Random;
 import java.util.zip.InflaterInputStream;
+import java.net.URI.*;
 import java.net.URI;
 
 import static example.BVars.ip;
