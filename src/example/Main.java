@@ -29,6 +29,7 @@ import mindustry.net.Packets.WorldStream;
 
 import java.util.Locale;
 import java.util.Random.*;
+import java.util.Random;
 import java.util.zip.InflaterInputStream;
 import java.net.URI.*;
 import java.net.URI;
@@ -72,9 +73,9 @@ public class Main{
         logic = new Logic();
         Groups.init();
 
-        long lineCount = Files.lines(Paths.get("proxy.txt"), StandardCharsets.UTF_8).count();
+        long lineCount = java.nio.file.Files.lines(Paths.get("proxy.txt"), StandardCharsets.UTF_8).count();
         long randomLineNum = ThreadLocalRandom.current().nextLong(1, lineCount + 1);
-        String randomIP = Files.lines(Paths.get("proxy.txt")).skip(randomLineNum - 1).findFirst().orElse(null);
+        String randomIP = java.nio.file.Files.lines(Paths.get("proxy.txt")).skip(randomLineNum - 1).findFirst().orElse(null);
 
         Log.info("Random proxy ip selected: @", randomIP);
 
