@@ -73,20 +73,24 @@ public class Main{
         logic = new Logic();
         Groups.init();
 
-        long lineCount = java.nio.file.Files.lines(Paths.get("proxy.txt"), StandardCharsets.UTF_8).count();
-        long randomLineNum = ThreadLocalRandom.current().nextLong(1, lineCount + 1);
-        String randomIP = java.nio.file.Files.lines(Paths.get("proxy.txt")).skip(randomLineNum - 1).findFirst().orElse(null);
 
-        Log.info("Random proxy ip selected: @", randomIP);
+        try {
+            long lineCount = java.nio.file.Files.lines(Paths.get("proxy.txt"), StandardCharsets.UTF_8).count();
+            long randomLineNum = ThreadLocalRandom.current().nextLong(1, lineCount + 1);
+            String randomIP = java.nio.file.Files.lines(Paths.get("proxy.txt")).skip(randomLineNum - 1).findFirst().orElse(null);
 
-        URI proxyURI = URI.create("http://"+randomIP+"/");
-        String proxyPort = proxyURI.getPort()+"";
-        String proxyHost = proxyURI.getHost().toString();
+            Log.info("Random proxy ip selected: @", randomIP);
 
-        System.getProperties().put( "proxySet", "true" );
-        System.getProperties().put( "socksProxyHost", proxyHost );
-        System.getProperties().put( "socksProxyPort", proxyPort );
+            URI proxyURI = URI.create("http://"+randomIP+"/");
+            String proxyPort = proxyURI.getPort()+"";
+            String proxyHost = proxyURI.getHost().toString();
 
+            System.getProperties().put( "proxySet", "true" );
+            System.getProperties().put( "socksProxyHost", proxyHost );
+            System.getProperties().put( "socksProxyPort", proxyPort );
+        } catch (Exception e) {
+            Log.err("proxy.txt file not found. Skipping.")
+        }
 
         Core.app = new Application() {
             @Override
