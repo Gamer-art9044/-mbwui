@@ -74,7 +74,7 @@ public class Main{
 
         Log.info("Random proxy ip selected: @", randomIP);
 
-        URI proxyURI = new URI.create("http://"+randomIP+"/");
+        URI proxyURI = URI.create("http://"+randomIP+"/");
         String proxyPort = proxyURI.getPort().toString();
         String proxyHost = proxyURI.getHost().toString();
 
