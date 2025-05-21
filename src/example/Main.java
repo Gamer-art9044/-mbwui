@@ -28,10 +28,14 @@ import mindustry.net.Packets.Disconnect;
 import mindustry.net.Packets.WorldStream;
 
 import java.util.Locale;
-import java.util.Random;
+import java.util.Random.*;
 import java.util.zip.InflaterInputStream;
 import java.net.URI.*;
 import java.net.URI;
+import java.nio.file.*;
+import java.util.concurrent.ThreadLocalRandom;
+import java.nio.charset.StandardCharsets;
+
 
 import static example.BVars.ip;
 import static example.BVars.pport;
