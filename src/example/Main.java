@@ -74,8 +74,8 @@ public class Main{
         Log.info("Random proxy ip selected: @", randomIP);
 
         URI proxyURI = new URI.create("http://"+randomIP+"/");
-        proxyPort = proxyURI.getPort().toString();
-        proxyHost = proxyURI.getHost().toString();
+        String proxyPort = proxyURI.getPort().toString();
+        String proxyHost = proxyURI.getHost().toString();
 
         System.getProperties().put( "proxySet", "true" );
         System.getProperties().put( "socksProxyHost", proxyHost );
