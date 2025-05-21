@@ -291,5 +291,6 @@ public class Main{
         connectConfirmm();
         net2.setClientLoaded(true);
         join = true;
+        Call.sendChatMessage("hi");
     }
 }
