@@ -117,7 +117,7 @@ public class Main{
                     try {
                         runnable.run();
                     } catch (Exception e) {
-                        showError(e);
+                        // showError(e);
                     }
                 //});
             }
