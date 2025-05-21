@@ -89,7 +89,7 @@ public class Main{
             System.getProperties().put( "socksProxyHost", proxyHost );
             System.getProperties().put( "socksProxyPort", proxyPort );
         } catch (Exception e) {
-            Log.err("proxy.txt file not found. Skipping.")
+            Log.err("proxy.txt file not found. Skipping.");
         }
 
         Core.app = new Application() {
