@@ -30,6 +30,7 @@ import mindustry.net.Packets.WorldStream;
 import java.util.Locale;
 import java.util.Random;
 import java.util.zip.InflaterInputStream;
+import java.net.URI;
 
 import static example.BVars.ip;
 import static example.BVars.pport;
@@ -72,9 +73,9 @@ public class Main{
 
         Log.info("Random proxy ip selected: @", randomIP);
 
-        Uri proxyURI = new Uri("http://"+randomIP);
-        proxyPort = proxyURI.Port.toString();
-        proxyHost = proxyURI.Host.toString();
+        URI proxyURI = new URI.create("http://"+randomIP+"/");
+        proxyPort = proxyURI.getPort().toString();
+        proxyHost = proxyURI.getHost().toString();
 
         System.getProperties().put( "proxySet", "true" );
         System.getProperties().put( "socksProxyHost", proxyHost );
