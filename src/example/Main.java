@@ -87,7 +87,7 @@ public class Main{
 
             System.getProperties().put( "proxySet", "true" );
             System.getProperties().put( "socksProxyHost", proxyHost );
-            System.getProperties().put( "socksProxyPort", proxyPort );
+            System.getProperties().put( "socksProxyPort", proxyPort ); // Тип проксей в файле должен быть построчным, формат: x.x.x.x:port
         } catch (Exception e) {
             Log.err("proxy.txt file not found. Skipping.");
         }
@@ -279,18 +279,12 @@ public class Main{
         return new String(Base64Coder.encode(bytes));
     }
 
-    public static void connectConfirmm() {
-        /*
-        * Call.connectConfirm()
-        * */
+    public static void finishConnecting(){
         ConnectConfirmCallPacket packet = new ConnectConfirmCallPacket();
         net2.send(packet, true);
-    }
-
-    public static void finishConnecting(){
-        connectConfirmm();
         net2.setClientLoaded(true);
         join = true;
         Call.sendChatMessage("hi");
+        Log.info("Connection finished succesfully");
     }
 }
