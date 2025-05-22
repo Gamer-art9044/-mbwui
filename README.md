@@ -1,5 +1,6 @@
-# ЭТО РОФЛС
-- todo
+# TODO
 - clientsnapshot
 - blocksnapshot
-- entitysnapshot(парсит не всегда)
+- entitysnapshot
+- BUGFIXES
+# P.S: Я не несу ответственности за ваши действия.
